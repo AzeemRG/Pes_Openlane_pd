@@ -143,6 +143,7 @@ We can see final printing stats and get to know different factors.
 One intresting factors can be seen is flop ratio , Flop ratio = 1613/14876 = 0.108 , in our its approx 11% which mean 11% of flops are getting utilized.
 
 
+</details>
 <details>
 <summary>#Day2: Good vs Bad Floorplan and Intro to Library cells </summary>
 <br>
