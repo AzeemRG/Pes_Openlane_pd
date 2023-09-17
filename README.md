@@ -83,6 +83,18 @@ Packaging
 
 Deployment
 
+
+## Installation of OpenLane
+
+Step1: Install any Virtual Machine(VM ware or Oracle Virtual Box)
+
+Step2: Download the Openlane VDI file using the link below which contains OpenLane in Ubuntu environment 
+  ``` https://forgefunder.com/~kunal/openlane.zip ```
+
+Step3: Setup the VM with the VDI file by selecting it as a pre-built disc. We are ready to start...
+
+Note: Allocate atleast 100 GB of disc space and 2gb memory 
+
 # Course Content
 
 <details>
@@ -129,6 +141,15 @@ Use ``` run_synthesis ```
 We can see final printing stats and get to know different factors.
 
 One intresting factors can be seen if flop ratio , Flop ratio = 1613/14876 = 0.108 , in our its approx 11% which mean 11% of flops are getting utilized.
+
+
+<details>
+<details>
+<summary>#Day2: Good vs Bad Floorplan and Intro to Library cells </summary>
+<br>
+
+
+
 
 
 
