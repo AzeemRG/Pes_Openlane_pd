@@ -85,6 +85,9 @@ Deployment
 
 # Course Content
 
+<details>
+<summary>#Day1: Inception of open-source EDA, OpenLane and sky130 PDK</summary>
+<br>
 
 
 
