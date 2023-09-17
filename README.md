@@ -89,5 +89,58 @@ Deployment
 <summary>#Day1: Inception of open-source EDA, OpenLane and sky130 PDK</summary>
 <br>
 
+#### Intoduction to skywater 130 pdk 
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/a126f74a-f65e-4718-831e-588defd6bbc1)
+
+SkyWater 130 PDK, also known as the SkyWater 130nm Process Design Kit, is a specific PDK offered by SkyWater Technology Foundry for their 130-nanometer semiconductor manufacturing process. 
+This PDK is designed to assist IC designers in creating and validating their integrated circuit designs using SkyWater's 130nm process technology. 
+
+### Exploring OpenLane
+
+Navigate to Openlane directory using below commands ``` cd Desktop/work/tools/openlane_working_dir/openlane ```
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/95b5d2db-66b5-4698-ab92-29b4daea1691)
+
+
+Use command ``` docker ``` to enter the shell.
+
+Use command ``` ./flow.tcl -interactive ``` to invoke Openlane 
+
+Let us see the design files present by default in openlane 
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/a22a75fe-b549-40dc-b087-f8a9790c79c7)
+
+We need to import packages and dependences to do that use command ``` package require openlane 0.9 ```.
+
+We are using picorv32a for example. To prepare the design use command ``` prep -design picorv32a ```
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/c69045b4-e69e-4d83-aa05-603d51b8139b)
+
+#### Synthesis 
+
+Once design is prepared we can see runs executable in design directory.
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/05e2d2c3-1914-4a27-9df7-ea1a50021e27)
+
+Use ``` run_synthesis ```
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/990346e3-7039-4224-a5ee-29215eb02dc0)
+
+We can see final printing stats and get to know different factors.
+
+One intresting factors can be seen if flop ratio , Flop ratio = 1613/14876 = 0.108 , in our its approx 11% which mean 11% of flops are getting utilized.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
