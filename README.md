@@ -84,7 +84,7 @@ Packaging
 Deployment
 
 
-## Installation of OpenLane
+# Installation of OpenLane
 
 Step1: Install any Virtual Machine(VM ware or Oracle Virtual Box)
 
