@@ -434,6 +434,7 @@ Now lets modify the config file
 ## Now lets follow the design flow in OPENLANE
 
 Synthesis
+
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/b3fa58c1-3f56-41c1-99fd-f49174b009a0)
 
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/635cf3d9-1e5d-429e-839c-6168fcdd64d6)
@@ -462,6 +463,7 @@ The sdc file used is ```my_base.sdc``` defined in pre_sta.conf using the command
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f7d4d37e-96a8-45c0-9aae-a5dffcb016f3)
 
 Placement
+
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/e9e9a713-a244-4948-acf3-1771cda5a8c7)
 
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/5fedcb78-f140-4f24-b4f5-6f475cda8a2e)
