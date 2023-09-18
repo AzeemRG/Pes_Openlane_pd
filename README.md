@@ -469,6 +469,22 @@ Placement
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/5fedcb78-f140-4f24-b4f5-6f475cda8a2e)
 
 
+## Delay Tables
+
+Delay tables are used to model and understand the propagation delays of logic gates and interconnects within a digital integrated circuit (IC). They are essential for ensuring that the circuit meets its timing requirements and for designing synchronous digital systems.
+
+Purpose of delay tables:
+
+- Timing analysis: Delay tables are used to perform timing analysis, which ensures that signals meet their timing constraints and identifies potential violations.
+- Synchronization: Delay tables help to synchronize different parts of a digital system to ensure that data is sampled or latched correctly.
+- Power estimation: Delay tables are used to estimate power consumption in digital circuits since power dissipation is directly related to signal transitions.
+- Components of delay tables:
+
+- Input conditions: Delay tables specify the input signal values or transitions that trigger the delay calculation.
+- Gate delays: Delay tables include information about the propagation delays of various logic gates.
+- Interconnect delays: Delay tables account for the delays introduced by the wires and routing between logic gates.
+- Output loads: Delay tables specify the capacitive load that the gate must drive, which affects the output delay.
+
 
 
 
