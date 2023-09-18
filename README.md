@@ -148,6 +148,59 @@ One intresting factors can be seen is flop ratio , Flop ratio = 1613/14876 = 0.1
 <summary>#Day2: Good vs Bad Floorplan and Intro to Library cells </summary>
 <br>
 
+## Chip Floorplan 
+
+  A chip floorplan is a crucial initial step in the design and layout of integrated circuits (ICs).
+  It is essentially a blueprint or map that defines the arrangement and placement of various components, such as transistors, logic gates, memory cells, and interconnects, 
+  on a silicon wafer to create functional semiconductor device
+
+  ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/36d7b924-92da-466f-aa11-1cc1facebfec)
+
+ #### Important Consideration during Floorplaning
+
+1. Define Size and Location of Pre-Placed cells
+
+In discussions involving core and die concepts, two critical factors come into play: Utilization Factor(Ratio of area utilized by netlist) and Aspect Ratio(Ratio of Height to Width). 
+Pre-Placed Cells are specific blocks or cells like memories, clock gating cells, comparator, mux etc within an integrated circuit layout that are manually placed by the chip designer in predetermined locations
+before the automated placement and routing tools are used to complete the rest of the design.
+
+2. De-coupling capacitors
+
+In large circuits with many resistors there are time when the capacitor may not get charged fully due to voltage drops. The solution for this is to use de- coupling capacitors. Decoupling capacitors store and 
+discharge electrical energy quickly or decoupling capacitors absorb excess charge to filter out high- frequency noise and transient voltage fluctuations.
+
+3. Power Planning
+Power planning during the Floorplanning phase is essential to lower noise in digital circuits attributed to voltage droop and ground bounce.When a transition occurs on a net, charge associated with coupling 
+capacitors may be dumped to ground. If there are not enough ground taps charge will accumulate at the tap and the ground line will act like a large resistor, raising the ground voltage and lowering our noise 
+margin. To bypass this problem a robust PDN with many power strap taps are needed to lower the resistance associated with the PDN.
+
+4. Pin Placement
+Pin placement is an essential part of floorplanning to minimize buffering and improve power consumption and timing delays we use the HDL netlist to determine where a specific pin should be placed in the
+circuit. We join the common pins and try to keep the connections as effecient as possible.
+
+## Floorplan in OpenLane
+
+ After completion of synthesis, this is the next step.
+ Use command ```run_floorplan``` to start the floorplan.
+
+ We can can that all the steps are done and floorplan is successful.
+ ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/fb4b1e75-0ac9-4f64-b7b7-b99edc9310d6)
+
+ Now as soon as it gets successful we will se a runs folder in the design directory , by which we can see the layout.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9da0bbeb-34b6-4480-8434-e71d89617f93)
+
+Layout looks like this
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/751e7a29-ee83-4906-90a0-e4fabe779728)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/53772ec2-b1d6-4f08-b4ce-a8a36f24282a)
+
+
+
+
+
+
+
 
 
 
