@@ -501,6 +501,9 @@ Clock tree synthesis (CTS) is the process of designing and optimizing the clock 
 - Verify the clock tree design.
 - Generate clock tree reports.
 
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/e4a98836-a497-44d6-9b20-ce5970394a0d)
+
+
 After placement next step is CTS , use command ```run_cts``` to run the flow
 
 ### STA-Analysis using OpenSTA
@@ -544,6 +547,66 @@ Due to the prensence of minimum and maximum library files our exeptation may not
 
 Stats : This shows Clock Reconvergence Pessimism Removal (CRPR) , Latency and skew
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/ce85a948-e5f8-474b-ac27-ad39641534b6)
+
+
+</details>
+<details>
+<summary>#Day5: Final Step RTLtoGDS using openlane </summary>
+<br>
+
+## PDN and Routing
+
+Power Distribution Network (PDN)
+
+- The PDN is a network of wires and power rails that delivers power to all of the components of the IC. The PDN must be designed to provide adequate power to all of the components, while also minimizing voltage drop and noise.
+- OpenLANE provides a variety of features for designing and optimizing the PDN. For example, OpenLANE can automatically generate the PDN grid and place the power rails. OpenLANE can also calculate the voltage drop and noise in the PDN, and identify any potential problems.
+
+Routing
+
+- Routing is the process of connecting the components of the IC together with wires. The routing must be done according to a variety of constraints, such as the physical dimensions of the IC, the timing requirements of the design, and the manufacturing rules.
+- OpenLANE provides a variety of features for routing the design. For example, OpenLANE can automatically route the wires according to the specified constraints. OpenLANE can also generate a variety of routing reports, such as congestion reports and timing reports.
+-Once the PDN and routing have been completed, it is important to verify the design to ensure that it meets all of the requirements.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9eb91035-dcd4-4a5b-b3cd-2c3a39625ac0)
+
+To start the flow use ``` run_pdn```
+
+for routing use ```run_routing``` 
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f9efd406-5333-4911-8d9f-283eff81bd3a)
+
+Ending step of this journey is SPEF Extarction.
+
+SPEF extraction in OpenLANE is the process of generating a SPEF file from a post-CTS design. The SPEF file contains information about the parasitic resistances, capacitances, and inductances of the nets in the design. This information is used by the placement and routing tools to ensure that the design meets its timing and power requirements.
+
+- Make sure to use the most up-to-date library file.
+- Use realistic extraction parameters.
+- Review the SPEF file carefully and fix any errors.
+- Consider using OpenLANE's SPEF optimization features to further improve the timing and power performance of the design.
+
+Unfortunately SPEF extractor is not present in OpenLane.
+
+These are some efficiant rounting called Triton Route 
+
+TritonRoute is a detailed router that is part of the OpenROAD project. It is used to route the wires in a digital integrated circuit (IC) according to the specified constraints. OpenSTA is a static timing analysis (STA) tool that is also part of the OpenROAD project. It is used to analyze the timing performance of a digital IC design.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/c2bb0ffe-b584-4669-9b8f-e218282391d8)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/b5a7fe9a-8ca9-4100-9d2a-21ef69c0cc18)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
