@@ -485,6 +485,73 @@ Purpose of delay tables:
 - Interconnect delays: Delay tables account for the delays introduced by the wires and routing between logic gates.
 - Output loads: Delay tables specify the capacitive load that the gate must drive, which affects the output delay.
 
+## Timing Analysis and more with OpenSTA
+
+- Setup time analysis is a static timing analysis technique that verifies that signals arrive at their destinations before the clock edge, meeting their setup time constraints. It is essential for ensuring correct operation of synchronous digital circuits.
+- Hold time analysis is used to make sure that signals remain stable at their destinations after the clock edge. This is important for ensuring that the circuit works correctly.
+- Clock jitter is the variation in the timing of a clock signal. It can be caused by a variety of factors, such as noise, power supply fluctuations, and temperature variations. Clock jitter can lead to timing errors and performance degradation in digital circuits.
+- Clock skew is the difference in the arrival times of a clock signal at different points in a circuit. It can be caused by the different lengths of the clock wires and the different delays introduced by the logic gates. Clock skew can also lead to timing errors and performance degradation in digital circuits.
+
+## Clock Tree Synthesis
+
+Clock tree synthesis (CTS) is the process of designing and optimizing the clock distribution network of a digital integrated circuit (IC). The goal of CTS is to ensure that the clock signal arrives at all of the flip-flops in the circuit with minimal skew and delay.
+- Read the design netlist, standard cell library, and clock constraints.
+- Generate different clock tree topologies.
+- Perform clock buffering and clock gating.
+- Verify the clock tree design.
+- Generate clock tree reports.
+
+After placement next step is CTS , use command ```run_cts``` to run the flow
+
+### STA-Analysis using OpenSTA
+
+Summary of the key steps in the post-CTS STA analysis flow:
+
+- Generate the post-CTS netlist and SDF file.
+- Invoke OpenSTA and load the library file.
+- Set the timing constraints.
+- Perform the STA analysis.
+- Review the STA results.
+- Post-CTS STA analysis is an important step in the physical design flow. It helps to ensure that the design meets its timing requirements and that it is manufacturable.
+
+Here are some additional tips for post-CTS STA analysis:
+
+- Make sure to use the most up-to-date library file.
+- Use realistic timing constraints.
+- Review the STA results carefully and fix any timing violations.
+- Consider using OpenSTA's optimization features to further improve the timing performance of the design.
+
+```
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/18-09_06-26/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/18-09_06-26/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/16-09_19-58/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty -max $::env(LIB_SLOWEST)
+read_liberty -max $::env(LIB_FASTEST)
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+```
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/a5cd0210-b007-4fd7-87fd-7a89dc5127a4)
+
+Due to the prensence of minimum and maximum library files our exeptation may not satisfy cause OpenRoad does not currently support for multi-corner optimization.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/641e1b93-f044-4663-bf7b-e4c28b7da2ff)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/1534224c-65dc-4c09-a6ff-a12bd490cb04)
+
+Stats : This shows Clock Reconvergence Pessimism Removal (CRPR) , Latency and skew
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/ce85a948-e5f8-474b-ac27-ad39641534b6)
+
+
+
+
+
+
+
+
 
 
 
