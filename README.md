@@ -323,17 +323,56 @@ By simulating the standard cell using a SPICE deck, we can predict its electrica
 - Higher level metal formation: To achieve suitable metal interconnects, the non-planar surface topography of the chip is addressed using chemical mechanical polishing (CMP). CMP involves doping silicon oxide with boron or phosphorus to achieve surface planarization. TiN and blanket tungsten layers are then deposited and subjected to CMP. An aluminum (Al) layer is then added and subjected to photolithography and CMP.
 - Dielectric layer addition: Finally, a dielectric layer, typically Si3N4, is applied to safeguard the chip.
 
-In summary, the fabrication steps for CMOS chips involve the following:
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/07ff261b-5881-438d-9440-5003c60b8894)
 
--- Substrate selection
--- Active region creation
--- N-well and P-well formation
--- Gate formation
--- LDD formation
--- Source and drain formation
--- Local interconnect formation
--- Higher level metal formation
--- Dielectric layer addition
+## LAB Work
+
+Installation
+```git clone https://github.com/nickson-jose/vsdstdcelldesign.git```
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/744abfaa-3449-40f3-b398-fe0edc9c76d5)
+
+To see the layout of CMOS invertor use command
+```magic -T sky130A.tech sky130_inv.mag &```
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/da0fb344-f42a-4efb-9906-d6b1e892fe8c)
+
+##### Checking DRC errors
+
+To check drc we to press DRC update and it show the errors in tkon window.
+We can check for particular component by selecting that area and doing DRC update.
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/a909d115-5584-42d4-b21f-b23c8d555d25)
+
+
+### Extarcting spice netlist
+After selecting the full layout(top_module)
+Type this commands in Tkon file as shown in image
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/57e16b30-321e-4757-9f02-8215148ab327)
+
+U will see the .ext and .spice file
+
+Here is the .spice file
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/197138f4-8341-49dc-8e90-1464e2acf999)
+
+Modified spice file
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/fd028537-b838-466f-8c90-36df725ad8fe)
+
+
+Use command ```ngspice sky130_inv.spice``` to run the netlist.
+Use command to plot the waveform ```plot y vs time a```.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f7fb4ca7-d01f-49b9-ab75-62bc4c6e9b20)
+
+
+
+
+
+
+
+
+
+
 
 
 
