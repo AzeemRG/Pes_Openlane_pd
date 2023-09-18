@@ -387,7 +387,93 @@ From the PnR point of view, we have to follow certain guidelines to get a standa
 
 To see track info used in routing use command navigate to ``` cd Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130fd_sc_hd ``` 
 
+- 1st numeric column indicates the offset and 2nd indicates the pitch along provided direction
+
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9acdba10-6a73-49b9-a11f-4ebb2fe1adbd)
+
+##### Setting user defined grid values
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/93148a4d-bcb2-46e2-8694-2a8e53648176)
+
+From the pic, we can see that the pins A and Y are at the intersection of X and Y tracks. So the first condition is met. The next requirement is that the width of the cell should be the odd multiple of xpitch 
+which is '0.46' as seen in the tracks.info file.
+
+### Magic Layout to Standard Cell LEF
+
+To generate the LEF file for a perfect layout:
+
+Save the modified layout with the new grid.
+In the console, type:
+```save sky130_vsdinv.mag```
+
+This saves the modified layout in the current working directory.
+
+Open the file and extract the LEF.
+Open the file using the following command:
+
+```magic -T sky130A.tch sky130_vsdinv.mag```
+
+In the console that opens, type the following command:
+
+```lef write```
+
+This will generate a LEF file.
+
+It will look like this
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/cc76d033-31af-4d1b-9e43-4bade4fc2806)
+
+- Now we copy the lef file in picorv32a
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/ebd1b314-da45-43e9-828e-c9d11bf4accf)
+
+Now lets modify the config file
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/6f0a6447-67e9-4bd1-9adb-0a882255b6f4)
+
+## Now lets follow the design flow in OPENLANE
+
+Synthesis
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/b3fa58c1-3f56-41c1-99fd-f49174b009a0)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/635cf3d9-1e5d-429e-839c-6168fcdd64d6)
+
+Slack Violations and Improvement
+
+
+Slack violations are timing violations in digital designs. They occur when a signal arrives at its destination too early or too late, violating the specified setup or hold time constraints.
+
+When referring to pre-clock tree synthesis STA analysis, we are mainly concerned with setup timing in regards to a launch clock. STA will report problems such as worst negative slack (WNS) and total negative 
+slack (TNS). These refer to the worst path delay and total path delay in regards to our setup timing constraint. Fixing slack violations can be debugged through performing STA analysis with OpenSTA, which is 
+integrated in the OpenLANE tool. The desired value of slack is above or equal to 0.
+
+To fix slack in OpenLANE, we can change the synthesis strategy as follows:
+
+- Enable CELL_SIZING: This tells OpenLANE to size the cells to improve timing.
+- Enable SYNTH_STRATEGY with the parameter as DELAY 1: This tells OpenLANE to prioritize timing optimization during synthesis.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9fde1bbc-634c-48af-9f91-79c435c77c2a)
+
+The slack has reduced a lot but still didnt meet the requirement. 
+The sdc file used is ```my_base.sdc``` defined in pre_sta.conf using the command ```sta pre_sta.conf```
+
+###### Perform manual cell replacement on our WNS path with the OpenSTA tool
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f7d4d37e-96a8-45c0-9aae-a5dffcb016f3)
+
+Placement
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/e9e9a713-a244-4948-acf3-1771cda5a8c7)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/5fedcb78-f140-4f24-b4f5-6f475cda8a2e)
+
+
+
+
+
+
+
+
+
 
 
 
