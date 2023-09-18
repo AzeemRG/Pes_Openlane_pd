@@ -592,7 +592,17 @@ TritonRoute is a detailed router that is part of the OpenROAD project. It is use
 
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/c2bb0ffe-b584-4669-9b8f-e218282391d8)
 
+In our process we have use Triton Route strategy as zero. Which means there will be some violatins , but using triton Route Strategy will be time consuming and heavy.
+
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/b5a7fe9a-8ca9-4100-9d2a-21ef69c0cc18)
+
+- Intra-layer parallel routing is a technique that routes multiple nets on the same metal layer in parallel. This can be done using a variety of different algorithms, such as maze routing and channel routing. Intra-layer parallel routing can help to improve routing congestion and reduce routing time.
+
+- Inter-layer sequential panel routing is a technique that routes nets on different metal layers in sequence. This technique is typically used for complex designs with high routing congestion. Inter-layer sequential panel routing can help to improve routing quality and reduce routing violations.
+
+Thank you.. 
+
+END of the flow........
 
 
 
