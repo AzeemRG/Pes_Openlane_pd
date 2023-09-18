@@ -303,11 +303,39 @@ To simulate and understand standard cells, wcreation of a SPICE deck is importan
 - Switching threshold: This is a single parameter that enables efficient description of the varying waveforms of CMOS devices. It is defined at the intersection of Vin = Vout.
 - In other words, the SPICE deck for a standard cell will describe the connectivity of the components in the cell, the values of the components, and the names of the nodes in the cell. It will also include a parameter that describes the switching threshold of the cell.
 
-Here is a rephrased version of the original passage:
-
 To simulate standard cells, we need to create a SPICE deck that describes the electrical behavior of the cell. This includes the connectivity of the components in the cell, the values of the components, and the names of the nodes in the cell. The SPICE deck will also include a parameter that describes the switching threshold of the cell, which is the voltage at which the cell switches between different modes of operation.
 
 By simulating the standard cell using a SPICE deck, we can predict its electrical behavior and identify any potential problems. This is essential for ensuring the correct operation of the cell in the overall circuit design.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/1e42f136-954f-4d8d-8804-661dc169788a)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/abcb0c80-e812-4f1f-9a5f-4c013b3883ea)
+
+## CMOS fabrication process
+
+- Substrate selection: The first step is to choose the appropriate semiconductor substrate, such as silicon.
+- Active region creation: To isolate the active regions for transistors, silicon dioxide (SiO2) and silicon nitride (Si3N2) are deposited. Pockets are then created using photoresist and lithography.
+- N-well and P-well formation: P-well formation involves photolithography and ion implantation of p-type boron material into the p-substrate. N-well is formed similarly with n-type phosphorus material. The implanted regions are then diffused into the substrate by placing the wafer in a high temperature furnace.
+- Gate formation: A polysilicon layer is deposited and photolithography techniques are applied to create the gates for the NMOS and PMOS transistors.
+- Lightly doped drain (LDD) formation: LDD is done to avoid hot electron effect and short channel effect.
+- Source and drain formation: Thin oxide layers are added to avoid channel effects during ion implantation. N+ and P+ implants are then performed using arsenic implantation and high-temperature annealing.
+- Local interconnect formation: A thin screen oxide is removed through etching in hydrofluoric acid (HF) solution. Titanium is then deposited through sputtering. Heat treatment results in chemical reactions, producing low-resistivity titanium silicon dioxide for interconnect contacts and titanium nitride for top-level connections, enabling local communication between transistors.
+- Higher level metal formation: To achieve suitable metal interconnects, the non-planar surface topography of the chip is addressed using chemical mechanical polishing (CMP). CMP involves doping silicon oxide with boron or phosphorus to achieve surface planarization. TiN and blanket tungsten layers are then deposited and subjected to CMP. An aluminum (Al) layer is then added and subjected to photolithography and CMP.
+- Dielectric layer addition: Finally, a dielectric layer, typically Si3N4, is applied to safeguard the chip.
+
+In summary, the fabrication steps for CMOS chips involve the following:
+
+-- Substrate selection
+-- Active region creation
+-- N-well and P-well formation
+-- Gate formation
+-- LDD formation
+-- Source and drain formation
+-- Local interconnect formation
+-- Higher level metal formation
+-- Dielectric layer addition
+
+
 
 
 
