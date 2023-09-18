@@ -551,7 +551,7 @@ Stats : This shows Clock Reconvergence Pessimism Removal (CRPR) , Latency and sk
 
 </details>
 <details>
-<summary>#Day5: Final Step RTLtoGDS using openlane </summary>
+<summary>#Day5: Final Step RTLtoGDS using OpenSTA </summary>
 <br>
 
 ## PDN and Routing
