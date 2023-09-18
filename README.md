@@ -297,11 +297,11 @@ Transition time - time(slew_high_rise_thr) - time(slew_low_rise_thr)
 
 To simulate and understand standard cells, wcreation of a SPICE deck is important for our cell. The SPICE deck will contain the following information:
 
-Component connectivity: This includes the substrate taps that tune the threshold voltage of the MOS transistors.
-Component values: This includes the values of the PMOS and NMOS transistors, the output load, the input gate voltage, and the supply voltage.
-Node names: These are required to define the SPICE netlist.
-Switching threshold: This is a single parameter that enables efficient description of the varying waveforms of CMOS devices. It is defined at the intersection of Vin = Vout.
-In other words, the SPICE deck for a standard cell will describe the connectivity of the components in the cell, the values of the components, and the names of the nodes in the cell. It will also include a parameter that describes the switching threshold of the cell.
+- Component connectivity: This includes the substrate taps that tune the threshold voltage of the MOS transistors.
+- Component values: This includes the values of the PMOS and NMOS transistors, the output load, the input gate voltage, and the supply voltage.
+- Node names: These are required to define the SPICE netlist.
+- Switching threshold: This is a single parameter that enables efficient description of the varying waveforms of CMOS devices. It is defined at the intersection of Vin = Vout.
+- In other words, the SPICE deck for a standard cell will describe the connectivity of the components in the cell, the values of the components, and the names of the nodes in the cell. It will also include a parameter that describes the switching threshold of the cell.
 
 Here is a rephrased version of the original passage:
 
