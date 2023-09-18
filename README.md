@@ -190,10 +190,107 @@ circuit. We join the common pins and try to keep the connections as effecient as
 
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9da0bbeb-34b6-4480-8434-e71d89617f93)
 
+Use command to see layout through magic tool
+```magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &```
+
 Layout looks like this
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/751e7a29-ee83-4906-90a0-e4fabe779728)
 
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/53772ec2-b1d6-4f08-b4ce-a8a36f24282a)
+
+## Library Binding and Placement 
+
+#### Netlist Binding , Initial Placement
+
+Netlist binding and initial placement design involve translating the logical description of a digital design, usually expressed in a hardware description language, into a predefined library of standard cells.
+
+Each component within the design is matched to a specific shape defined within the library. Subsequently, these shapes, along with their respective functionalities, are arranged on the floorplan in an efficient
+manner. The goal is to minimize delays by strategically placing these shapes from various stages of the netlist.
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/a7acefe4-40bd-4796-8d48-6175fbc7e761)
+
+#### Placement Optimization
+
+ During the final placement optimization phase with timing analysis using an ideal clock, the main objective is to refine the physical arrangement of components in an integrated circuit while making the 
+ simplifying assumption that the clock signal is flawless. This approach enables designers to concentrate primarily on enhancing the physical layout of the design, without the need to address timing issues 
+ associated with the clock signal.
+
+ Use command ```run_placement``` to start placement execution.
+
+ We can see the stats after completion
+
+ ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/77388f05-653b-459d-89b8-cd4f94801df2)
+ 
+ This is how it looks 
+
+ ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f5902e5d-3a9d-472c-b1a3-4fd5794294f8)
+
+To see in magic tool
+
+```magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &```
+ ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/a6e5460b-79b4-4bbd-95ea-461d6322dce4)
+
+ ## Cell Design and Standard Characterizations Flow 
+
+  The cell design flow encompasses the procedure of crafting and refining individual digital logic cells that form an integral part of a standard cell library. 
+  
+  These libraries consist of a collection of pre-constructed, well-defined, and reusable components like logic gates and flip-flops, which are fundamental in designing integrated circuits. 
+  
+  Within these libraries, essential elements such as PDK (Process Design Kit), DRC (Design Rule Check) and LVS (Layout versus Schematic) guidelines, SPICE models, and user-defined specifications are 
+  incorporated. 
+  
+  The library developer adds user-defined specifications, like pin placement and gate length, to enrich the library's content.
+
+ Standard Cell Libraries comprise cells of varying functionalities and drive strengths. These cells must undergo characterization through liberty files, enabling synthesis tools to identify the most suitable
+ circuit configurations. Characterization, a clearly defined process, involves the following steps:
+
+Associating a model file with CMOS properties.
+
+Defining the process corner(s) for the target cell's characterization.
+
+Setting thresholds for cell delay and slew, expressed as percentages.
+
+Defining timing and power tables.
+
+Incorporating the parasitic-extracted netlist.
+
+Applying input signals or stimuli.
+
+Issuing the requisite simulation commands.
+
+#### Timing Threshold 
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/cdc1222e-a145-4173-8f22-b2072b67e412)
+
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f84db5e5-f519-4d8f-aae4-5a9533c9a577)
+
+slew_low_rise_thr - 20% from bottom power supply when the signal is rising
+
+slew_high_rise_thr - 20% from top power supply when the signal is rising
+
+slew_low_fall_thr - 20% from bottom power supply when the signal is falling
+
+slew_high_fall_thr - 20% from top power supply when the signal is falling
+
+in_rise_thr - 50% point on the rising edge of input
+
+in_fall_thr - 50% point on the falling edge of input
+
+out_rise_thr - 50% point on the rising edge of ouput
+
+out_fall_thr - 50% point on the falling edge of ouput
+
+Based on the above parameters these are the important factors 
+
+propogation delay  - time(out_thr) - time(in_thr)
+
+Transition time - time(slew_high_rise_thr) - time(slew_low_rise_thr)
+
+
+
+
+
+
 
 
 
