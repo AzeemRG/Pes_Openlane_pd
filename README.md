@@ -604,7 +604,7 @@ Thank you..
 
 END of the flow........
 
-<br>
+</details>
 
 ## References:
 
