@@ -112,8 +112,7 @@ This PDK is designed to assist IC designers in creating and validating their int
 
 Navigate to Openlane directory using below commands ``` cd Desktop/work/tools/openlane_working_dir/openlane ```
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/95b5d2db-66b5-4698-ab92-29b4daea1691)
-
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/4169804b-fc21-4405-8f91-57c38b76962c)
 
 Use command ``` docker ``` to enter the shell.
 
@@ -127,16 +126,19 @@ We need to import packages and dependences to do that use command ``` package re
 
 We are using picorv32a for example. To prepare the design use command ``` prep -design picorv32a ```
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/c69045b4-e69e-4d83-aa05-603d51b8139b)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/0bec1cb2-9323-469e-bacc-440d75ac8111)
+
 
 #### Synthesis 
 
 Once design is prepared we can see runs executable in design directory.
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/05e2d2c3-1914-4a27-9df7-ea1a50021e27)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9d2d4323-abd0-49fe-89c5-2dccc1087ec2)
+
 
 Use ``` run_synthesis ```
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/990346e3-7039-4224-a5ee-29215eb02dc0)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/20a27075-959f-43fa-8d33-560fab52a298)
+
 
 We can see final printing stats and get to know different factors.
 
