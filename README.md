@@ -466,7 +466,8 @@ Placement
 
 ![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/e9e9a713-a244-4948-acf3-1771cda5a8c7)
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/5fedcb78-f140-4f24-b4f5-6f475cda8a2e)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9bbd9a41-473c-4570-8f10-c6bad3d9f1ab)
+
 
 
 ## Delay Tables
