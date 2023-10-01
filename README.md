@@ -427,11 +427,13 @@ It will look like this
 
 - Now we copy the lef file in picorv32a
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/ebd1b314-da45-43e9-828e-c9d11bf4accf)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/2c664561-c544-4d71-bd67-f8f4f2cc9142)
+
 
 Now lets modify the config file
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/6f0a6447-67e9-4bd1-9adb-0a882255b6f4)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/dc85a234-7644-4270-81ef-c28de6842964)
+
 
 ## Now lets follow the design flow in OPENLANE
 
