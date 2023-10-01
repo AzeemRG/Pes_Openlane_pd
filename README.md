@@ -457,14 +457,16 @@ To fix slack in OpenLANE, we can change the synthesis strategy as follows:
 - Enable CELL_SIZING: This tells OpenLANE to size the cells to improve timing.
 - Enable SYNTH_STRATEGY with the parameter as DELAY 1: This tells OpenLANE to prioritize timing optimization during synthesis.
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/9fde1bbc-634c-48af-9f91-79c435c77c2a)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/c95e3393-cf3f-4d65-8412-3835f9c908be)
+
 
 The slack has reduced a lot but still didnt meet the requirement. 
 The sdc file used is ```my_base.sdc``` defined in pre_sta.conf using the command ```sta pre_sta.conf```
 
 ###### Perform manual cell replacement on our WNS path with the OpenSTA tool
 
-![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/f7d4d37e-96a8-45c0-9aae-a5dffcb016f3)
+![image](https://github.com/AzeemRG/Pes_Openlane_pd/assets/128957056/8bd74526-26b2-4882-ad8a-dd1300abf999)
+
 
 Placement
 
